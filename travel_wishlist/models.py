@@ -1,6 +1,6 @@
 from django.db import models
 
-# Create your models here.
+# Describes a Place table in the database, with a name column, and a visited column.
 
 class Place(models.Model):
     name = models.CharField(max_length=200)

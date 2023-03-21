@@ -1,6 +1,11 @@
+# We install selenium in order to work 
+# Much slower
+#  More realistic
+
 from selenium.webdriver.chrome.webdriver import  WebDriver 
 
 from django.test import LiveServerTestCase
+
 
 class TitleTest(LiveServerTestCase):
 

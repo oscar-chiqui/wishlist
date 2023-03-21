@@ -1,3 +1,8 @@
+# This view will handle requests to your home page.
+
+# Replace Place.objects.get() with a call to Django convenience
+# function get_object_or_404, below .
+
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Place
 from .forms import NewPlaceForm

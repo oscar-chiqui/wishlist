@@ -1,13 +1,28 @@
+<!-- Use
+{% block content %}
+{% endblock %}
+to indicate what content
+replaces the same tags in
+base.html
+ -->
+
 {% extends 'travel_wishlist/base.html' %}
 {% block content %}
 
-<h2>Travel Wishlist</h2>
+<!-- At the top of the page -->
+<h2>Travel Wishlist</h2> 
 
 <form method="POST" action="{% url 'place_list' %}">
     {% csrf_token %}
     {{ new_place_form }}
-    <button id="add-new-place" type="submit">Add</button>
+    <button id="add-new-place" type="submit">Add</button> <!--The button id "add-new-place" the user submit using the button.-->
 </form>
+
+<!--  Modify HTML, add
+class attributes, so
+CSS can identify
+the elements we
+want to style -->
 
 {% for place in places  %}
 
@@ -17,7 +32,7 @@
 
     <form class="visited-form"  method="POST"action="{% url 'place_was_visited' place.pk %}">
         {% csrf_token %}
-        <button id="visited-button-{{ place.pk }}">Visited !</button>
+        <button id="visited-button-{{ place.pk }}">Visited !</button> <!--The button id for visited places -->
     </form>
 
 </div>
